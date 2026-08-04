@@ -10,6 +10,8 @@ redirect_from:
 
 {% include base_path %}
 
+[Download full CV (PDF)]({{ base_path }}/files/Shujah-Ur-Rehman-CV.pdf){: .btn .btn--primary}
+
 Education
 ======
 * M.S. in Electrical Engineering (Graduated with Distinction), Lahore University of Management Sciences (LUMS), Pakistan, 2024
@@ -63,12 +65,6 @@ Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
 Teaching
