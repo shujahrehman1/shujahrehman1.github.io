@@ -58,12 +58,6 @@ $(document).ready(function(){
     stickySideBar();
   });
 
-  // Follow menu drop down
-  $(".author__urls-wrapper button").on("click", function() {
-    $(".author__urls").fadeToggle("fast", function() {});
-    $(".author__urls-wrapper button").toggleClass("open");
-  });
-
   // init smooth scroll, this needs to be slightly more than then fixed masthead height
   $("a").smoothScroll({offset: -65});
 
