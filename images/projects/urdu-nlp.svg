@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#2d2d33"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg4)"/>
+
+  <!-- abstract right-to-left script strokes -->
+  <g stroke="#e4e4e7" stroke-width="4" fill="none" opacity="0.55" stroke-linecap="round">
+    <path d="M820 260 C 760 250, 720 280, 690 260 C 660 240, 660 210, 700 210"/>
+    <path d="M760 320 C 700 310, 650 340, 610 320 C 580 300, 590 270, 630 270"/>
+    <path d="M700 380 C 640 370, 590 400, 540 380 C 505 365, 515 335, 555 335"/>
+  </g>
+
+  <!-- tokenization: strokes resolving into embedding tokens -->
+  <g fill="#b45309">
+    <rect x="430" y="245" width="34" height="34" rx="4"/>
+    <rect x="430" y="305" width="34" height="34" rx="4"/>
+    <rect x="430" y="365" width="34" height="34" rx="4"/>
+  </g>
+  <g stroke="#b45309" stroke-width="2" opacity="0.7">
+    <line x1="464" y1="262" x2="540" y2="262"/>
+    <line x1="464" y1="322" x2="540" y2="322"/>
+    <line x1="464" y1="382" x2="540" y2="382"/>
+  </g>
+
+</svg>

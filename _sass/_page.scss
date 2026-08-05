@@ -16,11 +16,81 @@
   }
 }
 
+/* News / updates feed, e.g. on the homepage */
+.news-list {
+  margin: 1em 0 1.5em;
+  border-top: 1px solid $border-color;
+}
+
+.news-item {
+  padding: 0.75em 0;
+  border-bottom: 1px solid $border-color;
+  font-size: $type-size-5;
+  line-height: 1.5;
+}
+
+.news-date {
+  display: inline-block;
+  min-width: 5.5em;
+  margin-right: 0.6em;
+  font-weight: 700;
+  color: $accent-color;
+}
+
+/* Shared "info block" card style — used on both the Teaching and
+   Publications pages, matching Talha's reused .publication-block pattern */
+.info-block {
+  display: flex;
+  background: $background-color;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.info-body {
+  padding: 20px;
+  flex: 1;
+}
+
+.info-title {
+  margin: 0 0 0.3em;
+  font-size: 1.35em;
+}
+
+.info-meta {
+  display: inline-block;
+  margin: 0 0 0.8em;
+  padding: 0.25em 0.7em;
+  border-radius: 4px;
+  background: mix(#fff, $accent-color, 85%);
+  color: mix(#000, $accent-color, 15%);
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+.info-authors {
+  margin: 0 0 0.6em;
+  font-size: 0.95em;
+  color: mix(#fff, $text-color, 25%);
+}
+
 .page {
   @include breakpoint($large) {
     @include span(10 of 12 last);
     @include prefix(0.5 of 12);
     @include suffix(2 of 12);
+  }
+
+  /* when there's no sidebar (e.g. a project page with author_profile: false),
+     let the content use the full width instead of leaving the sidebar's gutter empty */
+  &.page--full-width {
+    @include breakpoint($large) {
+      @include span(12 of 12);
+      @include prefix(0);
+      @include suffix(0);
+    }
   }
 
   .page__inner-wrap {

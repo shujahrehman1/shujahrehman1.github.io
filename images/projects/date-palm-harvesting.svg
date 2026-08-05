@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#2d2d33"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg1)"/>
+
+  <!-- stylized palm fronds -->
+  <g stroke="#e4e4e7" stroke-width="3" fill="none" opacity="0.5">
+    <path d="M600 500 C 520 420, 460 340, 380 300"/>
+    <path d="M600 500 C 540 400, 520 320, 470 250"/>
+    <path d="M600 500 C 580 390, 590 300, 560 220"/>
+    <path d="M600 500 C 630 390, 630 300, 660 220"/>
+    <path d="M600 500 C 660 400, 690 320, 750 250"/>
+    <path d="M600 500 C 690 420, 750 340, 830 300"/>
+  </g>
+  <line x1="600" y1="500" x2="600" y2="620" stroke="#e4e4e7" stroke-width="6" opacity="0.5"/>
+
+  <!-- fruit clusters -->
+  <g fill="#b45309">
+    <circle cx="560" cy="440" r="9"/>
+    <circle cx="585" cy="455" r="9"/>
+    <circle cx="610" cy="445" r="9"/>
+    <circle cx="635" cy="460" r="9"/>
+    <circle cx="575" cy="475" r="9"/>
+    <circle cx="600" cy="480" r="9"/>
+    <circle cx="625" cy="475" r="9"/>
+  </g>
+
+  <!-- detection bounding box + reticle, robotics/CV motif -->
+  <rect x="510" y="405" width="180" height="120" rx="6" fill="none" stroke="#b45309" stroke-width="3"/>
+  <line x1="510" y1="405" x2="540" y2="405" stroke="#b45309" stroke-width="3"/>
+  <line x1="690" y1="525" x2="660" y2="525" stroke="#b45309" stroke-width="3"/>
+  <text x="514" y="397" font-family="'Inter', sans-serif" font-size="20" font-weight="700" fill="#b45309">ripe: 0.94</text>
+
+</svg>

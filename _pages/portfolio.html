@@ -1,0 +1,38 @@
+---
+layout: single
+title: "🚀 Projects"
+permalink: /portfolio/
+author_profile: true
+---
+
+<div class="project-grid">
+  {% for project in site.portfolio reversed %}
+    <details class="project-card">
+      <summary class="project-card__summary">
+        <div class="project-card__image-wrap">
+          <img class="project-card__image" src="{{ project.header.teaser | prepend: '/images/' | relative_url }}" alt="{{ project.title }}">
+        </div>
+        <div class="project-card__body">
+          {% if project.tags %}
+            <div class="project-card__tags">
+              {% for tag in project.tags limit:3 %}<span class="project-card__tag">{{ tag }}</span>{% endfor %}
+            </div>
+          {% endif %}
+          <h2 class="project-card__title">{{ project.title }}</h2>
+          <p class="project-card__excerpt">{{ project.excerpt }}</p>
+          <div class="project-card__actions">
+            <span class="project-card__toggle"><span class="project-card__chevron" aria-hidden="true"></span></span>
+            {% if project.github %}
+              <a class="project-card__github" href="{{ project.github }}" target="_blank" rel="noopener" aria-label="View {{ project.title }} on GitHub" onclick="event.stopPropagation()">
+                <i class="fab fa-github"></i>
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </summary>
+      <div class="project-card__full">
+        {{ project.content }}
+      </div>
+    </details>
+  {% endfor %}
+</div>

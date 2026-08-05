@@ -184,6 +184,13 @@
 
   li {
     white-space: nowrap;
+
+    /* location/employer text can be long (e.g. a full university name) —
+       let it wrap instead of overflowing the narrow sidebar column */
+    &.author__desktop {
+      white-space: normal;
+      word-wrap: break-word;
+    }
   }
 
   a {

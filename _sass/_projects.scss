@@ -1,0 +1,193 @@
+/* ==========================================================================
+   PROJECTS GRID
+   ========================================================================== */
+
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin: 2em 0;
+
+  /* .page reserves an unused 2/12-of-container gutter to its right (a
+     leftover "secondary sidebar" slot this site doesn't use). Expand just
+     this grid into that dead space — rightward only, away from the
+     sidebar on the left — rather than touching .page's own grid math. */
+  @include breakpoint($large) {
+    margin-right: -20%;
+  }
+}
+
+.project-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: $background-color;
+  border: 1px solid $border-color;
+  transition: box-shadow 0.25s ease;
+
+  &:not([open]):hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14);
+
+    .project-card__image {
+      transform: scale(1.04);
+    }
+
+    .project-card__title {
+      color: $link-color;
+    }
+  }
+}
+
+.project-card__summary {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  @include breakpoint($medium) {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.project-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.9em;
+}
+
+.project-card__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: $type-size-6;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: $link-color;
+
+  &::before {
+    content: "View Details";
+  }
+
+  [open] &::before {
+    content: "Hide Details";
+  }
+}
+
+.project-card__github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  color: $text-color;
+  font-size: $type-size-5;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: mix(#fff, $accent-color, 88%);
+    color: $link-color;
+  }
+}
+
+.project-card__chevron {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+
+  [open] & {
+    transform: rotate(-135deg);
+  }
+}
+
+.project-card__image-wrap {
+  flex-shrink: 0;
+  overflow: hidden;
+  background: $primary-color;
+  aspect-ratio: 16 / 9;
+
+  @include breakpoint($medium) {
+    width: 38%;
+    aspect-ratio: auto;
+  }
+}
+
+.project-card__full {
+  padding: 0 1.4em 1.5em;
+  border-top: 1px solid $border-color;
+  margin-top: 0.5em;
+  padding-top: 1.25em;
+  font-size: $type-size-5;
+  line-height: 1.6;
+
+  @include breakpoint($medium) {
+    padding: 1.25em 2em 1.75em;
+  }
+
+  p {
+    margin: 0 0 1em;
+  }
+}
+
+.project-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card__body {
+  padding: 1.25em 1.4em 1.5em;
+
+  @include breakpoint($medium) {
+    padding: 1.75em 2em;
+  }
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-bottom: 0.6em;
+}
+
+.project-card__tag {
+  display: inline-block;
+  padding: 0.15em 0.7em;
+  border-radius: 999px;
+  background: mix(#fff, $accent-color, 90%);
+  color: mix(#000, $accent-color, 15%);
+  font-size: $type-size-8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.project-card__title {
+  margin: 0 0 0.35em;
+  font-size: 1.35em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: $text-color;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.project-card__excerpt {
+  margin: 0;
+  color: mix(#fff, $text-color, 35%);
+  font-size: 0.95em;
+  line-height: 1.5;
+  text-decoration: none;
+}
